@@ -8,8 +8,8 @@ const style = {
 
 export default function(props: any) {
 
-  console.log('im here')
   return (
     <div {...props} style={style}>I'm a common div</div>
   )
+
 }
