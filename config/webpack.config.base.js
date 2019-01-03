@@ -3,8 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const alias = {
-}
+const alias = {}
 
 module.exports = {
   output: {
@@ -69,7 +68,25 @@ module.exports = {
       {
         type: 'javascript/auto',
         test: /\.json$/,
-        use: [ { loader: 'json-to-js-loader' } ],
+        use: [{
+          loader: 'raw-loader'
+        }],
+      },
+      {
+        test: /\.less$/,
+        use: [{
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          },
+        ]
       }
     ]
   },

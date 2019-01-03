@@ -1,15 +1,20 @@
 import React from 'react'
+import FA from 'react-fontawesome'
+import { Button } from 'antd'
 
 const style = {
-  width: '200px',
-  height: '200px',
-  background: 'red',
 }
 
-export default function(props: any) {
+export default function(_props: any) {
 
   return (
-    <div {...props} style={style}>I'm a common div</div>
+    <div style={style} className="is-flex">
+
+      <a className="button is-primary">I'm a bulma button</a>
+      <a>A fontawesome icon -> <FA name="cog" /></a>
+      <Button type="primary">I'm a antd button</Button>
+
+    </div>
   )
 
 }
